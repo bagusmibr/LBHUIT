@@ -6,6 +6,9 @@
 
 const API_URL = "https://script.google.com/macros/s/AKfycby-wrXVe7f7eOW4NSnXpYe1zAFWaIw0jfBrzTuffbB5lbAbGgF89Lbh5ZvtZ1TtQ3V5kw/exec";
 const REFRESH_INTERVAL_MS = 5 * 60 * 1000; // 5 menit
+const APP_VERSION = "1.0.1-auth"; // Untuk verifikasi di console
+
+console.log(`HUIT Leaderboard v${APP_VERSION} loading...`);
 
 let kpiDataAll = null;
 let currentDivisi = "DBS";
