@@ -1,0 +1,267 @@
+/* =========================================
+   HUIT LEADERBOARD - STANDALONE CSS
+========================================= */
+
+:root {
+    /* Identitas HUIT */
+    --color-primary: #E61E3A; 
+    --color-primary-dark: #cc1a32;
+    --color-secondary: #2B357F; 
+    
+    /* KPI Dark Theme variables */
+    --kpi-bg: #0F172A;
+    --kpi-surface: #1E293B;
+    --kpi-surface-hover: #334155;
+    --kpi-text: #F8FAFC;
+    --kpi-text-muted: #94A3B8;
+
+    /* Metals (untuk podium) */
+    --gold: #F59E0B;
+    --silver: #94A3B8;
+    --bronze: #B45309;
+
+    --font-main: 'Inter', sans-serif;
+    --radius-md: 12px;
+    --radius-lg: 24px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--kpi-bg);
+    color: var(--kpi-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   KPI DASHBOARD (DARK THEME)
+========================================= */
+.kpi-theme {
+    background-color: var(--kpi-bg);
+}
+
+.kpi-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.kpi-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.kpi-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.kpi-logo .dot {
+    color: var(--color-primary);
+}
+
+.kpi-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #fff, #94A3B8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.kpi-period {
+    color: var(--kpi-text-muted);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Tabs Divisi */
+.kpi-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.kpi-tab {
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.1);
+    color: var(--kpi-text-muted);
+    padding: 0.8rem 2.5rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: inherit;
+    outline: none;
+}
+
+.kpi-tab:hover {
+    border-color: rgba(255,255,255,0.3);
+    color: white;
+}
+
+.kpi-tab.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+    box-shadow: 0 4px 15px rgba(230, 30, 58, 0.4);
+}
+
+/* Podium */
+.podium-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1.5rem;
+    margin-bottom: 5rem;
+    min-height: 250px;
+}
+
+.podium-item {
+    background: var(--kpi-surface);
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    flex: 1;
+    max-width: 200px;
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-bottom: none;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.podium-item:hover {
+    transform: translateY(-5px);
+    background: var(--kpi-surface-hover);
+}
+
+.podium-item.rank-1 { height: 240px; border-top: 4px solid var(--gold); }
+.podium-item.rank-2 { height: 200px; border-top: 4px solid var(--silver); }
+.podium-item.rank-3 { height: 170px; border-top: 4px solid var(--bronze); }
+
+.podium-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--color-secondary);
+    margin: -40px auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: 3px solid var(--kpi-bg);
+}
+
+.rank-1 .podium-avatar { background: var(--gold); color: #fff;}
+.rank-2 .podium-avatar { background: var(--silver); color: #fff;}
+.rank-3 .podium-avatar { background: var(--bronze); color: #fff;}
+
+.podium-name { font-weight: 800; font-size: 1.1rem; margin-bottom: 0.2rem; }
+.podium-dept { font-size: 0.8rem; color: var(--kpi-text-muted); margin-bottom: 1rem; }
+.podium-score { font-size: 1.5rem; font-weight: 800; color: white; }
+
+/* Leaderboard List */
+.leaderboard-card {
+    background: var(--kpi-surface);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.02);
+}
+
+.kpi-table { width: 100%; border-collapse: collapse; }
+.kpi-table th { text-align: left; padding: 1rem; color: var(--kpi-text-muted); font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.kpi-table td { padding: 1.2rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle; }
+
+.rank-badge {
+    display: inline-block;
+    width: 30px; height: 30px; line-height: 30px; text-align: center;
+    background: rgba(255,255,255,0.1); border-radius: 50%; font-weight: bold;
+}
+
+.score-badge {
+    background: rgba(230, 30, 58, 0.1); color: #ff4757;
+    padding: 0.45rem 1rem; border-radius: 20px; font-weight: 800;
+    border: 1px solid rgba(230, 30, 58, 0.1);
+}
+
+.plot-badge {
+    background: rgba(59, 130, 246, 0.1); color: #60a5fa;
+    padding: 0.45rem 1rem; border-radius: 20px; font-weight: 800;
+    font-size: 0.85rem; border: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+/* SYNC STATUS */
+.kpi-sync-status {
+    display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 0.75rem;
+    font-size: 0.82rem; color: var(--kpi-text-muted); font-weight: 500;
+    background: rgba(255,255,255,0.04); padding: 0.3rem 0.9rem; border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.07);
+}
+.sync-dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; animation: pulse-dot 2s infinite; }
+.sync-dot.syncing { background: #f59e0b; animation: spin-dot 1s linear infinite; }
+
+@keyframes pulse-dot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
+
+/* HIGHLIGHT BEST */
+.kpi-table tbody tr.best-overall { background: rgba(245, 158, 11, 0.04); }
+.score-badge.best-glow {
+    background: rgba(245, 158, 11, 0.15); color: #f59e0b;
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    box-shadow: 0 0 14px rgba(245, 158, 11, 0.45);
+    animation: glow-pulse 2.5s ease-in-out infinite;
+}
+@keyframes glow-pulse { 0%, 100% { box-shadow: 0 0 10px rgba(245, 158, 11, 0.4); } 50% { box-shadow: 0 0 22px rgba(245, 158, 11, 0.7); } }
+
+/* EXPORT */
+.export-section { display: flex; justify-content: center; margin-top: 3rem; padding-bottom: 2rem; }
+.export-btn {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    background: linear-gradient(135deg, rgba(43, 53, 127, 0.5), rgba(43, 53, 127, 0.3));
+    color: var(--kpi-text-muted); border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.8rem 2rem; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s;
+}
+.export-btn:hover { color: white; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(43, 53, 127, 0.3); }
+
+/* ANIMATIONS */
+.fade-in { opacity: 0; animation: fadeIn 0.8s forwards; }
+.fade-in-up { opacity: 0; transform: translateY(30px); animation: fadeInUp 0.8s forwards; }
+@keyframes fadeIn { to { opacity: 1; } }
+@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+.appear { opacity: 1; transform: translate(0,0); }
+
+/* RESPONSIVENESS */
+@media (max-width: 768px) {
+    .kpi-container { padding: 2rem 1rem; }
+    .kpi-header h1 { font-size: 1.8rem; }
+    .kpi-tabs { gap: 0.8rem; }
+    .kpi-tab { padding: 0.6rem 1.5rem; font-size: 0.9rem; }
+    .podium-section { flex-direction: column; align-items: center; gap: 2rem; }
+    .podium-item {
+        width: 100%; max-width: 320px; height: auto !important; border-top: none; border-left: 4px solid;
+        flex-direction: row; justify-content: flex-start; padding: 1.2rem; text-align: left;
+    }
+    .podium-avatar { margin: 0 1.5rem 0 0; width: 50px; height: 50px; }
+    .podium-score { margin-left: auto; font-size: 1.3rem; }
+    .rank-1 { border-left-color: var(--gold); order: 1; }
+    .rank-2 { border-left-color: var(--silver); order: 2; }
+    .rank-3 { border-left-color: var(--bronze); order: 3; }
+    .leaderboard-card { padding: 1rem; overflow-x: auto; }
+    .kpi-table { min-width: 600px; }
+}

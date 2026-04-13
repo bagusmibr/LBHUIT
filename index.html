@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUIT Leaderboard Standalone</title>
+    <!-- Mencegah di-index oleh Google -->
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Updated path to local css folder -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- html2canvas for Export Feature -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body class="kpi-theme">
+    <div class="kpi-container" id="kpiMainContainer">
+        <!-- Header -->
+        <header class="kpi-header fade-in">
+            <div class="kpi-logo">HUIT<span class="dot">.</span> Internal</div>
+            <h1>Leaderboard</h1>
+            <p class="kpi-period" id="kpiMonthLabel">Bulan: ...</p>
+            <!-- Sync Status -->
+            <div class="kpi-sync-status" id="kpiSyncStatus">
+                <span class="sync-dot"></span>
+                <span id="kpiLastUpdated">Menghubungkan...</span>
+            </div>
+        </header>
+
+        <!-- Tabs Divisi -->
+        <div class="kpi-tabs fade-in">
+            <button class="kpi-tab active" data-target="DBS">Divisi DBS</button>
+            <button class="kpi-tab" data-target="BCS">Divisi BCS</button>
+        </div>
+
+        <!-- Top 3 Podium -->
+        <section class="podium-section fade-in-up" id="podiumContainer">
+            <!-- Diisi lewat JS -->
+        </section>
+
+        <!-- Leaderboard List -->
+        <section class="leaderboard-list-section fade-in-up" style="transition-delay: 0.2s;">
+            <div class="leaderboard-card">
+                <table class="kpi-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Nama Karyawan</th>
+                            <th>Posisi</th>
+                            <th>Total Plot</th>
+                            <th>Skor</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboardTbody">
+                        <!-- Diisi lewat JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Export Button -->
+        <div class="export-section">
+            <button class="export-btn" id="exportBtn">
+                <span>📸</span> Export sebagai Gambar
+            </button>
+        </div>
+    </div>
+
+    <!-- Updated path to local js folder -->
+    <script src="js/kpi.js"></script>
+</body>
+</html>

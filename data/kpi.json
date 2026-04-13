@@ -1,0 +1,10 @@
+{
+    "periode": "April 2026",
+    "karyawan": [
+        { "id": 1, "nama": "Ali", "divisi": "BCS", "posisi": "Illustrator", "skor": 90.0, "total_plot": 12 },
+        { "id": 2, "nama": "Budi", "divisi": "BCS", "posisi": "Illustrator", "skor": 79.0, "total_plot": 8 },
+        { "id": 3, "nama": "Doni", "divisi": "DBS", "posisi": "Illustrator", "skor": 93.0, "total_plot": 15 },
+        { "id": 4, "nama": "Eka", "divisi": "DBS", "posisi": "Illustrator", "skor": 75.0, "total_plot": 5 },
+        { "id": 5, "nama": "Citra", "divisi": "DBS", "posisi": "Illustrator", "skor": 70.0, "total_plot": 3 }
+    ]
+}
