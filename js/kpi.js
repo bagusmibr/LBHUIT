@@ -14,9 +14,47 @@ let lastUpdatedTime = null;
 let refreshTimer = null;
 
 // =============================================
-// INIT
+// AUTHENTICATION LOGIC
 // =============================================
+const CORRECT_PASSWORD = "HuitAkses888";
+
 document.addEventListener('DOMContentLoaded', () => {
+    const authSession = localStorage.getItem('huit_auth');
+    if (authSession === CORRECT_PASSWORD) {
+        showDashboard();
+    } else {
+        initLoginListeners();
+    }
+});
+
+function initLoginListeners() {
+    const loginBtn = document.getElementById('loginBtn');
+    const passwordInput = document.getElementById('passwordInput');
+
+    loginBtn.addEventListener('click', handleLogin);
+    passwordInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') handleLogin();
+    });
+}
+
+function handleLogin() {
+    const passwordInput = document.getElementById('passwordInput');
+    const errorEl = document.getElementById('loginError');
+
+    if (passwordInput.value === CORRECT_PASSWORD) {
+        localStorage.setItem('huit_auth', CORRECT_PASSWORD);
+        showDashboard();
+    } else {
+        errorEl.style.display = 'block';
+        passwordInput.value = '';
+        passwordInput.focus();
+    }
+}
+
+function showDashboard() {
+    document.getElementById('loginOverlay').style.display = 'none';
+    document.getElementById('kpiMainContainer').style.display = 'block';
+
     document.querySelector('.kpi-header').classList.add('appear');
     document.querySelector('.kpi-tabs').classList.add('appear');
 
@@ -37,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchAndRender();
     refreshTimer = setInterval(fetchAndRender, REFRESH_INTERVAL_MS);
     startLastUpdatedClock();
-});
+}
 
 // =============================================
 // FEATURE #3 - AUTO-REFRESH & SYNC STATUS

@@ -15,7 +15,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body class="kpi-theme">
-    <div class="kpi-container" id="kpiMainContainer">
+    <!-- Login Overlay (Password Protection) -->
+    <div id="loginOverlay" class="login-overlay">
+        <div class="login-box">
+            <div class="kpi-logo">HUIT<span class="dot">.</span></div>
+            <h2>Akses Terbatas</h2>
+            <p>Silakan masukkan password untuk melihat Dashboard.</p>
+            <input type="password" id="passwordInput" placeholder="Masukkan Password...">
+            <button id="loginBtn">Masuk ke Dashboard</button>
+            <p id="loginError" class="login-error" style="display: none;">Password salah, silakan coba lagi.</p>
+        </div>
+    </div>
+
+    <div class="kpi-container" id="kpiMainContainer" style="display: none;">
         <!-- Header -->
         <header class="kpi-header fade-in">
             <div class="kpi-logo">HUIT<span class="dot">.</span> Internal</div>
